@@ -1,2 +1,2 @@
-# angular-test
+# Angular-test
 Testing Angular.js
