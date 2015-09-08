@@ -13,5 +13,10 @@
 			{{item.name}} - <em>{{item.role}}</em>
 		</li>
 	</ul>
+	<form ng-submit="addPerson()">
+		<input type="text" placeholder="Name" ng-model="name">
+		<input type="text" placeholder="Role" ng-model="role">
+		<input type="submit">
+	</form>
 </body>
 </html>
