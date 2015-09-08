@@ -4,8 +4,11 @@
 * Description
 */
 angular.module('directoryApp', [])
-	.controller('directoryController', function($scope){
-		$scope.list = [
+	.controller('directoryController', function(){
+
+		var dirList = this;
+
+		dirList.list = [
 			
 			{name:'Monteiro', role: 'Full Stack Unicorn', age: 20}, 
 			{name:'Gibão', role:'Core Magician', age: 25}, 
@@ -14,9 +17,9 @@ angular.module('directoryApp', [])
 			
 			];
 
-			$scope.addPerson = function() {
-				$scope.list.push({name: $scope.name, role: $scope.role});
-				$scope.name = '';
-				$scope.role = '';
+			dirList.addPerson = function() {
+				dirList.list.push({name: dirList.name, role: dirList.role});
+				dirList.name = '';
+				dirList.role = '';
 			};
 	});
