@@ -15,9 +15,7 @@
 	<input type="text" ng-model="search">
 	<br>
 	<ul ng-class="{'hidden': !dirList.toggle}">
-		<li ng-repeat="item in dirList.list | filter:search">
-			<img ng-src="{{item.img}}" alt="">
-			{{item.name}} - <em>{{item.role}}</em>
+		<li ng-repeat="item in dirList.list | filter:search" ng-include src="'person.html'">
 		</li>
 	</ul>
 	<br>
