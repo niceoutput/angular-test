@@ -4,17 +4,22 @@
 	<meta charset="UTF-8">
 	<title>Angular tests</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="//code.angularjs.org/1.4.5/angular-animate.js"></script>
 	<script src="directory.js"></script>
 	<style>
 		.hidden {display: none;}
 		li{list-style-type: none; margin-bottom: 1.5em;}
 		img{display: block; border-radius:20%;}
+		li.ng-enter{transition: 0.3s ease all; opacity:0; transform:translateY(10px);} 
+		li.ng-enter-active{opacity:1;transform:translateY(0);}
+		li.ng-leave{transition: 0.3s ease all; opacity:1;transform:translateY(0);}
+		li.ng-leave.ng-leave-active{opacity:0;transform:transform:translateY(10px);}
 	</style>
 </head>
 <body ng-controller="directoryController as dirList">
 	<input type="text" ng-model="search">
 	<br>
-	<ul ng-class="{'hidden': !dirList.toggle}">
+	<ul ng-if="dirList.toggle">
 		<li ng-repeat="item in dirList.list | filter:search" ng-include src="'person.html'">
 		</li>
 	</ul>
